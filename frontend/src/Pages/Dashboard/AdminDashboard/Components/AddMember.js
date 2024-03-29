@@ -32,7 +32,7 @@ function AddMember() {
     ]
 
     const userTypes = [
-        { value: 'Staff', text: 'Staff' },
+        { value: 'Staff', text: 'Librarian' },
         { value: 'Student', text: 'Student' }
     ]
 
@@ -101,7 +101,7 @@ function AddMember() {
 
     return (
         <div>
-            <p className="dashboard-option-title">Add a Member</p>
+            <p className="dashboard-option-title">Add a Student</p>
             <div className="dashboard-title-line"></div>
             <form className="addmember-form" onSubmit={addMember}>
                 <div className='semanticdropdown'>
@@ -116,7 +116,7 @@ function AddMember() {
                 <label className="addmember-form-label" htmlFor="userFullName">Full Name<span className="required-field">*</span></label><br />
                 <input className="addmember-form-input" type="text" name="userFullName" value={userFullName} required onChange={(e) => setUserFullName(e.target.value)}></input><br />
 
-                <label className="addmember-form-label" htmlFor={userType === "Student" ? "admissionId" : "employeeId"}>{userType === "Student" ? "Admission Id" : "Employee Id"}<span className="required-field">*</span></label><br />
+                <label className="addmember-form-label" htmlFor={userType === "Student" ? "admissionId" : "employeeId"}>{userType === "Student" ? "Student Id" : "Librarian Id"}<span className="required-field">*</span></label><br />
                 <input className="addmember-form-input" type="text" value={userType === "Student" ? admissionId : employeeId} required onChange={(e) => { userType === "Student" ? setAdmissionId(e.target.value) : setEmployeeId(e.target.value) }}></input><br />
 
                 <label className="addmember-form-label" htmlFor="mobileNumber">Mobile Number<span className="required-field">*</span></label><br />

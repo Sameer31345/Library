@@ -62,7 +62,6 @@ function GetMember() {
             <div style={memberId === null ? { display: "none" } : {}}>
                 <div className="member-profile-content" id="profile@member" style={memberId === null ? { display: "none" } : {}}>
                     <div className="user-details-topbar">
-                        <img className="user-profileimage" src="./assets/images/Profile.png" alt=""></img>
                         <div className="user-info">
                             <p className="user-name">{memberDetails?.userFullName}</p>
                             <p className="user-id">{memberDetails?.userType === "Student" ? memberDetails?.admissionId : memberDetails?.employeeId}</p>
@@ -109,17 +108,7 @@ function GetMember() {
                                 </p>
                             </div>
                         </div>
-                        <div className="specific-right">
-                            <div style={{ display: "flex", flexDirection: "column", flex: "0.5" }}>
-                                <p style={{ fontSize: "20px", display: "flex", alignItems: "center", justifyContent: "center" }}><b>Points</b></p>
-                                <p style={{ fontSize: "25px", fontWeight: "500", display: "flex", alignItems: "center", justifyContent: "center", marginTop: "15px" }}>540</p>
-                            </div>
-                            <div className="dashboard-title-line"></div>
-                            <div style={{ display: "flex", flexDirection: "column", flex: "0.5" }}>
-                                <p style={{ fontSize: "20px", display: "flex", alignItems: "center", justifyContent: "center" }}><b>Rank</b></p>
-                                <p style={{ fontSize: "25px", fontWeight: "500", display: "flex", alignItems: "center", justifyContent: "center", marginTop: "15px" }}>{memberDetails?.points}</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -151,7 +140,7 @@ function GetMember() {
                     </table>
                 </div>
 
-                <div className="member-reservedbooks-content" id="reservedbooks@member">
+                {/* <div className="member-reservedbooks-content" id="reservedbooks@member">
                     <p style={{ fontWeight: "bold", fontSize: "22px", marginTop: "22px", marginBottom: "22px" }}>Reserved</p>
                     <table className="activebooks-table">
                         <tr>
@@ -175,7 +164,7 @@ function GetMember() {
                             })
                         }
                     </table>
-                </div>
+                </div> */}
                 <div className="member-history-content" id="history@member">
                     <p style={{ fontWeight: "bold", fontSize: "22px", marginTop: "22px", marginBottom: "22px" }}>History</p>
                     <table className="activebooks-table">

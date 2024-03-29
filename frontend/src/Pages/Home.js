@@ -13,8 +13,8 @@ import WelcomeBox from '../Components/WelcomeBox'
 
 function Home() {
     return (
-        <div id='home'>
-            <ImageSlider/>
+        <div id='home' style={{fontSize: "100px", textAlign: "center" , marginTop: "100px"}}>
+            {/* <ImageSlider/>
             <WelcomeBox/>
             <About/>
             <Stats/>
@@ -23,7 +23,9 @@ function Home() {
             <ReservedBooks/>
             <News/>
             <PhotoGallery/>
-            <Footer/>
+            <Footer/> */}
+
+            Library Management System
         </div>
     )
 }

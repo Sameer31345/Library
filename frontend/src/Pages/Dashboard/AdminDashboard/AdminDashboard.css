@@ -2,7 +2,7 @@
   display: grid;
   place-items: center;
   height: 100vh;
-  background-color: wheat;
+  background-color: rgb(156, 159, 184);
   position: relative;
 }
 
@@ -12,7 +12,7 @@
   height: 90vh;
   margin: 60px auto;
   display: flex;
-  background-color: #fefaf5;
+  background-color: #cec9c3;
   border-radius: 15px;
   -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
@@ -23,7 +23,7 @@
 /* Sidebar */
 
 .dashboard-options {
-  background-color: rgb(24, 33, 62);
+  background-color: rgb(31, 32, 85);
   color: wheat;
   display: flex;
   flex-direction: column;
@@ -34,9 +34,9 @@
 }
 
 .dashboard-logo {
-  margin-top: 50px;
-  margin-bottom: 50px !important;
-  color: rgb(234, 68, 74);
+  margin-top: 30px;
+  margin-bottom: 30px !important;
+  color: rgb(202, 187, 187);
   font-size: 30px;
   font-weight: 800;
   text-align: center;
@@ -45,8 +45,8 @@
 .dashboard-option {
   text-decoration: none;
   padding: 15px;
-  border-bottom: 0.5px solid salmon;
-  border-top: 1px solid rgb(234, 68, 74, 0.5);
+  border-bottom: 0.5px solidrgba(189, 185, 185, 0.5);
+  border-top: 1px solid rgba(189, 185, 185, 0.5);
   color: #ffff;
   font-weight: 700;
   text-align: left;
@@ -56,7 +56,7 @@
 }
 
 .dashboard-option:hover {
-  color: rgb(234, 68, 74);
+  color: rgb(61, 74, 134);
   border-left: 5px solid rgb(234, 68, 74);
   transition: all 0.5s ease;
   background-color: #ddd;

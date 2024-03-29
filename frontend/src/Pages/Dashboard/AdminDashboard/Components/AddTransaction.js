@@ -27,7 +27,6 @@ function AddTransaction() {
     const [toDateString, setToDateString] = useState(null)
 
     const transactionTypes = [
-        { value: 'Reserved', text: 'Reserve' },
         { value: 'Issued', text: 'Issue' }
     ]
 
@@ -159,7 +158,7 @@ function AddTransaction() {
 
     return (
         <div>
-            <p className="dashboard-option-title">Add a Transaction</p>
+            <p className="dashboard-option-title">Issue Book</p>
             <div className="dashboard-title-line"></div>
             <form className='transaction-form' onSubmit={addTransaction}>
                 <label className="transaction-form-label" htmlFor="borrowerId">Borrower<span className="required-field">*</span></label><br />
@@ -178,8 +177,6 @@ function AddTransaction() {
                     <tr>
                         <th>Name</th>
                         <th>Issued</th>
-                        <th>Reserved</th>
-                        <th>Points</th>
                     </tr>
                     <tr>
                         <td>{borrowerDetails.userFullName}</td>
@@ -188,12 +185,6 @@ function AddTransaction() {
                         }).length
                         }
                         </td>
-                        <td>{borrowerDetails.activeTransactions?.filter((data) => {
-                            return data.transactionType === "Reserved" && data.transactionStatus === "Active"
-                        }).length
-                        }
-                        </td>
-                        <td>{borrowerDetails.points}</td>
                     </tr>
                 </table>
                 <table className="admindashboard-table shortinfo-table" style={borrowerId === "" ? { display: "none" } : {}}>
@@ -231,12 +222,20 @@ function AddTransaction() {
                         onChange={(event, data) => setBookId(data.value)}
                     />
                 </div>
-                <table className="admindashboard-table shortinfo-table" style={bookId === "" ? { display: "none" } : {}}>
+                {/* <table className="admindashboard-table shortinfo-table" style={bookId === "" ? { display: "none" } : {}}>
                     <tr>
                         <th>Available Coipes</th>
-                        <th>Reserved</th>
                     </tr>
-                </table>
+                    {
+                        borrowerDetails.activeTransactions?.filter((data) => { return data.transactionStatus === "Active" }).map((data, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{data.bookCountAvailable}</td>
+                                     </tr>
+                            )
+                        })
+                    }
+                </table> */}
 
                 <label className="transaction-form-label" htmlFor="transactionType">Transaction Type<span className="required-field">*</span></label><br />
                 <div className='semanticdropdown'>
