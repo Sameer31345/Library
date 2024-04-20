@@ -14,9 +14,10 @@ function Footer() {
                     <div className="contact-details">
                         <h1>Contact Us</h1>
                         <p>Librarian</p>
-                        <p>Government School</p>
-                        <p>Visakhapatnam-530041</p>
-                        <p>Andhra Pradesh</p>
+                        <p>Harcourt Butler Technical University</p>
+                        <p>Electronics Department</p>
+                        <p>Kanpur-208002</p>
+                        <p>Uttar Pradesh</p>
                         <p>India</p>
                         <p><b>Email:</b>example@gmail.com</p>
                     </div>
@@ -31,7 +32,7 @@ function Footer() {
                         <h1>Librarian</h1>
                         <p>Name</p>
                         <p>Education</p>
-                        <p>Contact: +91 9123456787</p>
+                        <p>Contact: +91 XXXXXXXXXXX</p>
                     </div>
                 </div>
                 <div className="contact-social" >
@@ -40,9 +41,6 @@ function Footer() {
                     <a href='#home' className='social-icon'><TelegramIcon style={{ fontSize: 40,color:"rgb(283,83,75)"}} /></a>
                     <a href='#home' className='social-icon'><InstagramIcon style={{ fontSize: 40,color:"rgb(283,83,75)"}} /></a>
                 </div>
-            </div>
-            <div className='copyright-details'>
-                <p className='footer-copyright'>&#169; 2020 copyright all right reserved<br /><span>Designed with ❤️ by Pranavdhar Reddy</span></p>
             </div>
         </div>
     )

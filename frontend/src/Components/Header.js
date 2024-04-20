@@ -33,7 +33,7 @@ function Header() {
                         </Link>
                     </li>
                     <li className="option" onClick={() => { closeMenu() }}>
-                        <Link to='/books'>
+                        <Link to='/' >
                         <a href="#books">Books</a>
                         </Link>
                     </li>

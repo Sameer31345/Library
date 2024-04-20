@@ -10,8 +10,10 @@ import RecentAddedBooks from '../Components/RecentAddedBooks'
 import ReservedBooks from '../Components/ReservedBooks'
 import Stats from '../Components/Stats'
 import WelcomeBox from '../Components/WelcomeBox'
+import { Image } from 'react-bootstrap'
 
 function Home() {
+   
     return (
         <div id='home' style={{fontSize: "100px", textAlign: "center" , marginTop: "100px"}}>
             {/* <ImageSlider/>
@@ -22,12 +24,12 @@ function Home() {
             <PopularBooks/>
             <ReservedBooks/>
             <News/>
-            <PhotoGallery/>
-            <Footer/> */}
+            <PhotoGallery/>*/
+            <><WelcomeBox /><Footer/></>}
 
-            Library Management System
+         
         </div>
-    )
+    );
 }
 
 export default Home
