@@ -15,9 +15,14 @@ import { AuthContext } from "../../../Context/AuthContext";
 import axios from "axios";
 import moment from "moment";
 
+
 function MemberDashboard() {
   const [active, setActive] = useState("profile");
   const [sidebar, setSidebar] = useState(false);
+ 
+
+  
+  const [recentAddedBooks, setRecentAddedBooks] = useState([]);
 
   const API_URL = process.env.REACT_APP_API_URL;
   const { user } = useContext(AuthContext);
@@ -41,6 +46,50 @@ function MemberDashboard() {
     localStorage.removeItem("user");
     window.location.reload();
   };
+
+
+  useEffect(() => {
+    const getallBooks = async () => {
+        const response = await axios.get(API_URL + "api/books/allbooks")
+        setRecentAddedBooks(response.data.slice(0, 5))
+    }
+    getallBooks()
+}, [API_URL])
+
+
+//   const addBook = async (e) => {
+//     e.preventDefault();
+//     setIsLoading(true);
+//     const BookData = {
+//         bookName: bookName,
+//         alternateTitle: alternateTitle,
+//         author: author,
+//         bookCountAvailable: bookCountAvailable,
+//         language: language,
+//         publisher: publisher,
+//         categories: selectedCategories,
+//         isAdmin: user.isAdmin
+//     };
+//     try {
+//         const response = await axios.post(API_URL + "api/books/addbook", BookData);
+//         if (recentAddedBooks.length >= 5) {
+//             recentAddedBooks.splice(-1);
+//         }
+//         setRecentAddedBooks([response.data, ...recentAddedBooks]);
+//         setBookName("");
+//         setAlternateTitle("");
+//         setAuthor("");
+//         setBookCountAvailable(null);
+//         setLanguage("");
+//         setPublisher("");
+//         setSelectedCategories([]);
+//         alert("Book Added Successfully 🎉");
+//     }
+//     catch (err) {
+//         console.log(err);
+//     }
+//     setIsLoading(false);
+// };
 
   return (
     <div className="dashboard">
@@ -87,7 +136,35 @@ function MemberDashboard() {
           >
             <LocalLibraryIcon className="dashboard-option-icon" /> Active
           </a>
-          <a
+
+        
+          
+
+
+          {/* <div className="dashboard-option-title">Recently Added Books</div>
+<div className="dashboard-title-line"></div>
+<table className="admindashboard-table">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Book Name</th>
+      <th>Added Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {recentAddedBooks.map((book, index) => (
+      <tr key={index}>
+        <td>{index + 1}</td>
+        <td>{book.bookName}</td>
+        <td>{book.createdAt.substring(0, 10)}</td>
+      </tr>
+    ))}
+  </tbody>
+</table> */}
+
+       
+
+          {/* <a
             href="#reservedbook@member"
             className={`dashboard-option ${
               active === "reserved" ? "clicked" : ""
@@ -98,7 +175,7 @@ function MemberDashboard() {
             }}
           >
             <BookIcon className="dashboard-option-icon" /> Reserved
-          </a>
+          </a> */}
           <a
             href="#history@member"
             className={`dashboard-option ${
@@ -183,7 +260,7 @@ function MemberDashboard() {
                   </p>
                 </div>
               </div>
-              <div className="specific-right">
+              {/* <div className="specific-right">
                 <div className="specific-right-top">
                   <p className="specific-right-topic">
                     <b>Points</b>
@@ -219,7 +296,7 @@ function MemberDashboard() {
                     {memberDetails?.points}
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -265,7 +342,28 @@ function MemberDashboard() {
             </table>
           </div>
 
-          <div
+
+<div>  <div className="dashboard-option-title">Recently Added Books</div>
+<div className="dashboard-title-line"></div>
+<table className="admindashboard-table">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Book Name</th>
+      <th>Added Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {recentAddedBooks.map((book, index) => (
+      <tr key={index}>
+        <td>{index + 1}</td>
+        <td>{book.bookName}</td>
+        <td>{book.createdAt.substring(0, 10)}</td>
+      </tr>
+    ))}
+  </tbody>
+</table></div>
+          {/* <div
             className="member-reservedbooks-content"
             id="reservedbooks@member"
           >
@@ -292,7 +390,7 @@ function MemberDashboard() {
                   );
                 })}
             </table>
-          </div>
+          </div> */}
           <div className="member-history-content" id="history@member">
             <p className="member-dashboard-heading">History</p>
             <table className="activebooks-table">

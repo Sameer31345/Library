@@ -18,14 +18,15 @@ function Home() {
         <div id='home' style={{fontSize: "100px", textAlign: "center" , marginTop: "100px"}}>
             {/* <ImageSlider/>
             <WelcomeBox/>
-            <About/>
+            
             <Stats/>
             <RecentAddedBooks/>
             <PopularBooks/>
             <ReservedBooks/>
             <News/>
-            <PhotoGallery/>*/
-            <><WelcomeBox /><Footer/></>}
+            <PhotoGallery/>
+            <><WelcomeBox />*/
+            <><About /><Footer /></>}
 
          
         </div>
